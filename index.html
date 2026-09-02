@@ -1,0 +1,1151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- SEO meta tags -->
+    <meta name="description" content="StyleHub - Shop the latest trends in men's, women's and kids' fashion. Quality apparel, delivered with style." />
+    <meta name="author" content="StyleHub" />
+
+    <title>StyleHub | Fashion &amp; Apparel for Men, Women &amp; Kids</title>
+
+    <!-- Favicon will be added later in assets/icons/ -->
+    <!-- Main stylesheet -->
+    <link rel="stylesheet" href="css/style.css" />
+
+    <!-- Main JavaScript (defer = runs after the HTML has been parsed) -->
+    <script src="js/script.js" defer></script>
+</head>
+
+<body>
+    <!-- Skip link: lets keyboard users jump straight to the main content -->
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <!-- ==================================================
+         1. ANNOUNCEMENT BAR
+    ================================================== -->
+    <div class="announcement-bar" role="region" aria-label="Store announcement">
+        <p class="announcement-bar__text">
+            Free shipping on orders over <span class="announcement-bar__highlight">₹999</span>
+        </p>
+    </div>
+
+    <!-- ==================================================
+         2. HEADER / NAVIGATION
+    ================================================== -->
+    <header id="site-header" class="site-header">
+        <div class="header__inner container">
+            <!-- Mobile hamburger: opens / closes the menu (JavaScript) -->
+            <button id="nav-toggle" class="nav-toggle" type="button"
+                    aria-label="Open menu" aria-expanded="false" aria-controls="primary-navigation">
+                <span class="nav-toggle__bar"></span>
+                <span class="nav-toggle__bar"></span>
+                <span class="nav-toggle__bar"></span>
+            </button>
+
+            <!-- Logo / wordmark -->
+            <a href="#home" class="logo" aria-label="StyleHub - go to homepage">
+                Style<span class="logo__accent">Hub</span>
+            </a>
+
+            <!-- Primary navigation: desktop row, mobile dropdown panel -->
+            <nav id="primary-navigation" class="main-nav" aria-label="Primary navigation">
+                <ul class="main-nav__list">
+                    <li><a class="main-nav__link" href="#home">Home</a></li>
+                    <li><a class="main-nav__link" href="#mens-collection">Men</a></li>
+                    <li><a class="main-nav__link" href="#womens-collection">Women</a></li>
+                    <li><a class="main-nav__link" href="#kids-collection">Kids</a></li>
+                    <li><a class="main-nav__link" href="#shop">Shop</a></li>
+                    <li><a class="main-nav__link" href="#featured-products">New Arrivals</a></li>
+                    <li><a class="main-nav__link main-nav__link--sale" href="#promo-banner">Sale</a></li>
+                </ul>
+            </nav>
+
+            <!-- Action icons: search / wishlist / shopping bag / account -->
+            <div class="header-actions">
+                <button type="button" class="header-action" aria-label="Search">
+                    <svg class="header-action__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+                        <circle cx="11" cy="11" r="7" />
+                        <line x1="21" y1="21" x2="16.3" y2="16.3" />
+                    </svg>
+                </button>
+
+                <button type="button" class="header-action" aria-label="Wishlist">
+                    <svg class="header-action__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+                        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                    </svg>
+                </button>
+
+                <!-- Shopping bag with cart count badge (updated by JavaScript later) -->
+                <button type="button" id="cart-btn" class="header-action" aria-label="Shopping bag">
+                    <svg class="header-action__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+                        <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
+                        <line x1="3" y1="6" x2="21" y2="6" />
+                        <path d="M16 10a4 4 0 0 1-8 0" />
+                    </svg>
+                    <span id="cart-count" class="cart-count">0</span>
+                </button>
+
+                <button type="button" id="account-btn" class="header-action" aria-label="My account">
+                    <svg class="header-action__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                        <circle cx="12" cy="7" r="4" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <!-- ==================================================
+             2. HERO
+        ================================================== -->
+        <section id="home" class="hero" aria-labelledby="hero-heading">
+            <div class="container hero__inner">
+
+                <!-- Left column: hero content -->
+                <div class="hero__content">
+                    <p class="hero__eyebrow">The New Season</p>
+
+                    <h1 id="hero-heading" class="hero__title">
+                        Elevate Your Everyday <em class="hero__title-accent">Style</em>
+                    </h1>
+
+                    <p class="hero__description">
+                        Discover thoughtfully curated fashion designed for every moment.
+                        Modern silhouettes, timeless essentials, and effortless elegance.
+                    </p>
+
+                    <div class="hero__actions">
+                        <a href="#womens-collection" class="btn btn--accent">Shop Women</a>
+                        <a href="#mens-collection" class="btn btn--outline">Shop Men</a>
+                    </div>
+
+                    <p class="hero__note">Free shipping on orders over ₹999</p>
+                </div>
+
+                <!-- Right column: hero visual -->
+                <div class="hero__media">
+                    <div class="hero__frame">
+                        <img class="hero__image"
+                             src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1200&q=80"
+                             alt="Fashion model wearing an elegant beige trench coat against a neutral background"
+                             loading="eager"
+                             decoding="async" />
+                    </div>
+
+                    <!-- Small floating label on the photo -->
+                    <p class="hero__badge">
+                        <span class="hero__badge-title">New Collection</span>
+                        <span class="hero__badge-sub">Autumn / Winter</span>
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ==================================================
+             3. CATEGORY SHOWCASE
+        ================================================== -->
+        <section id="categories" class="section categories" aria-labelledby="categories-heading">
+            <div class="container">
+
+                <!-- Section header -->
+                <header class="categories__header">
+                    <p class="categories__eyebrow">Shop by Category</p>
+                    <h2 id="categories-heading" class="categories__title">Find Your Signature Style</h2>
+                    <p class="categories__description">Curated collections for every expression, every occasion.</p>
+                </header>
+
+                <!-- Category cards -->
+                <div class="categories__grid">
+
+                    <!-- MEN -->
+                    <article class="category-card">
+                        <a class="category-card__link" href="#mens-collection">
+                            <img class="category-card__image"
+                                 src="https://images.unsplash.com/photo-1488161628813-04466f872be2?auto=format&fit=crop&w=900&q=80"
+                                 alt="Stylish man wearing a denim jacket against a teal wall"
+                                 loading="lazy" decoding="async" />
+                            <div class="category-card__content">
+                                <h3 class="category-card__title">Men</h3>
+                                <p class="category-card__description">Refined essentials for modern living.</p>
+                                <span class="category-card__cta">
+                                    Shop Men <span class="category-card__arrow" aria-hidden="true">&rarr;</span>
+                                </span>
+                            </div>
+                        </a>
+                    </article>
+
+                    <!-- WOMEN -->
+                    <article class="category-card">
+                        <a class="category-card__link" href="#womens-collection">
+                            <img class="category-card__image"
+                                 src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=900&q=80"
+                                 alt="Fashion model wearing a contemporary outfit in soft natural light"
+                                 loading="lazy" decoding="async" />
+                            <div class="category-card__content">
+                                <h3 class="category-card__title">Women</h3>
+                                <p class="category-card__description">Timeless silhouettes with a contemporary edge.</p>
+                                <span class="category-card__cta">
+                                    Shop Women <span class="category-card__arrow" aria-hidden="true">&rarr;</span>
+                                </span>
+                            </div>
+                        </a>
+                    </article>
+
+                    <!-- KIDS -->
+                    <article class="category-card">
+                        <a class="category-card__link" href="#kids-collection">
+                            <img class="category-card__image"
+                                 src="https://images.unsplash.com/photo-1519238263530-99bdd11df2ea?auto=format&fit=crop&w=900&q=80"
+                                 alt="Young child wearing a cosy winter outfit"
+                                 loading="lazy" decoding="async" />
+                            <div class="category-card__content">
+                                <h3 class="category-card__title">Kids</h3>
+                                <p class="category-card__description">Playful style for every little moment.</p>
+                                <span class="category-card__cta">
+                                    Shop Kids <span class="category-card__arrow" aria-hidden="true">&rarr;</span>
+                                </span>
+                            </div>
+                        </a>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================================================
+             4. FEATURED PRODUCTS
+        ================================================== -->
+        <section id="featured-products" class="section featured" aria-labelledby="featured-heading">
+            <div class="container">
+
+                <!-- Section header -->
+                <header class="featured__header">
+                    <p class="featured__eyebrow">Curated For You</p>
+                    <h2 id="featured-heading" class="featured__title">Featured Pieces</h2>
+                    <p class="featured__description">Discover the styles everyone is talking about.</p>
+                </header>
+
+                <!-- Product cards are rendered here by JavaScript (js/script.js) -->
+                <div class="product-grid" id="featured-product-grid">
+                    <!-- Rendered dynamically by renderProducts() -->
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ==================================================
+             5. SHOP — PRODUCT DISCOVERY
+        ================================================== -->
+        <section id="shop" class="section shop" aria-labelledby="shop-heading">
+            <div class="container">
+
+                <!-- Section header -->
+                <header class="featured__header shop__header">
+                    <p class="featured__eyebrow">The StyleHub Edit</p>
+                    <h2 id="shop-heading" class="featured__title">Shop All Styles</h2>
+                    <p class="featured__description">Find your next favorite piece with our curated selection of fashion for every generation.</p>
+                </header>
+
+                <!-- Search -->
+                <div class="shop-search">
+                    <label class="visually-hidden" for="shop-search-input">Search products, brands or styles</label>
+                    <svg class="shop-search__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+                        <circle cx="11" cy="11" r="7" />
+                        <line x1="21" y1="21" x2="16.3" y2="16.3" />
+                    </svg>
+                    <input type="search" id="shop-search-input" class="shop-search__input"
+                           placeholder="Search products, brands or styles..." autocomplete="off" />
+                </div>
+
+                <!-- Filter toolbar -->
+                <div class="shop-toolbar" role="group" aria-label="Filter and sort products">
+                    <div class="shop-filter">
+                        <label class="shop-filter__label" for="shop-filter-category">Category</label>
+                        <select id="shop-filter-category" class="shop-filter__select">
+                            <option value="all">All</option>
+                            <option value="women">Women</option>
+                            <option value="men">Men</option>
+                            <option value="kids">Kids</option>
+                        </select>
+                    </div>
+
+                    <div class="shop-filter">
+                        <label class="shop-filter__label" for="shop-filter-size">Size</label>
+                        <select id="shop-filter-size" class="shop-filter__select">
+                            <option value="all">All</option>
+                            <!-- Size options generated by JavaScript -->
+                        </select>
+                    </div>
+
+                    <div class="shop-filter">
+                        <label class="shop-filter__label" for="shop-filter-color">Color</label>
+                        <select id="shop-filter-color" class="shop-filter__select">
+                            <option value="all">All</option>
+                            <!-- Color options generated by JavaScript -->
+                        </select>
+                    </div>
+
+                    <div class="shop-filter">
+                        <label class="shop-filter__label" for="shop-filter-brand">Brand</label>
+                        <select id="shop-filter-brand" class="shop-filter__select">
+                            <option value="all">All</option>
+                            <!-- Brand options generated by JavaScript -->
+                        </select>
+                    </div>
+
+                    <div class="shop-filter shop-filter--price">
+                        <label class="shop-filter__label" for="shop-filter-price">
+                            Price: up to <span class="shop-filter__price-value" id="shop-price-value"></span>
+                        </label>
+                        <input type="range" id="shop-filter-price" class="shop-filter__range" min="0" step="100" />
+                    </div>
+
+                    <div class="shop-filter shop-filter--sort">
+                        <label class="shop-filter__label" for="shop-sort">Sort by</label>
+                        <select id="shop-sort" class="shop-filter__select">
+                            <option value="featured">Featured</option>
+                            <option value="price-asc">Price: Low to High</option>
+                            <option value="price-desc">Price: High to Low</option>
+                            <option value="rating">Rating</option>
+                            <option value="name">Name: A–Z</option>
+                        </select>
+                    </div>
+
+                    <button type="button" id="shop-clear" class="shop-clear">Clear All</button>
+                </div>
+
+                <!-- Results meta: label + dynamic result count -->
+                <div class="collection-meta shop-meta">
+                    <p class="collection-meta__label">Shop / All Styles</p>
+                    <p class="collection-meta__count" id="shop-result-count"></p>
+                </div>
+
+                <!-- Matching products rendered by JavaScript -->
+                <div class="product-grid" id="shop-product-grid"></div>
+
+                <!-- Empty state (shown by JavaScript when nothing matches) -->
+                <div class="shop-empty" id="shop-empty" hidden>
+                    <p class="shop-empty__title">No Styles Found</p>
+                    <p class="shop-empty__text">Try adjusting your filters or search for another style.</p>
+                    <button type="button" id="shop-reset" class="btn btn--outline">Reset Filters</button>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ==================================================
+             6. MEN'S COLLECTION
+        ================================================== -->
+        <section id="mens-collection" class="section collection collection--tint" aria-labelledby="mens-heading">
+            <div class="container">
+
+                <!-- Section header -->
+                <header class="featured__header collection__header">
+                    <p class="featured__eyebrow">For Him</p>
+                    <h2 id="mens-heading" class="featured__title">Men's Collection</h2>
+                    <p class="featured__description">Refined essentials, contemporary layers, and everyday pieces designed for modern living.</p>
+                    <a class="collection__view-all" href="#mens-collection">View All</a>
+                </header>
+
+                <!-- Category meta: active label + dynamic style count -->
+                <div class="collection-meta">
+                    <p class="collection-meta__label">Men / New Season</p>
+                    <p class="collection-meta__count" data-collection-count="men"></p>
+                </div>
+
+                <!-- Product cards rendered by JavaScript (js/script.js) -->
+                <div class="product-grid" id="mens-product-grid">
+                    <!-- Rendered dynamically by renderCollection("men", ...) -->
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ==================================================
+             7. WOMEN'S COLLECTION
+        ================================================== -->
+        <section id="womens-collection" class="section collection" aria-labelledby="womens-heading">
+            <div class="container">
+
+                <!-- Section header -->
+                <header class="featured__header collection__header">
+                    <p class="featured__eyebrow">For Her</p>
+                    <h2 id="womens-heading" class="featured__title">Women's Collection</h2>
+                    <p class="featured__description">Effortless silhouettes and statement pieces made to express your individual style.</p>
+                    <a class="collection__view-all" href="#womens-collection">View All</a>
+                </header>
+
+                <!-- Category meta: active label + dynamic style count -->
+                <div class="collection-meta">
+                    <p class="collection-meta__label">Women / New Season</p>
+                    <p class="collection-meta__count" data-collection-count="women"></p>
+                </div>
+
+                <!-- Product cards rendered by JavaScript (js/script.js) -->
+                <div class="product-grid" id="womens-product-grid">
+                    <!-- Rendered dynamically by renderCollection("women", ...) -->
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ==================================================
+             8. KIDS' COLLECTION
+        ================================================== -->
+        <section id="kids-collection" class="section collection collection--tint" aria-labelledby="kids-heading">
+            <div class="container">
+
+                <!-- Section header -->
+                <header class="featured__header collection__header">
+                    <p class="featured__eyebrow">For Little Ones</p>
+                    <h2 id="kids-heading" class="featured__title">Kids' Collection</h2>
+                    <p class="featured__description">Comfortable, playful styles made for every adventure.</p>
+                    <a class="collection__view-all" href="#kids-collection">View All</a>
+                </header>
+
+                <!-- Category meta: active label + dynamic style count -->
+                <div class="collection-meta">
+                    <p class="collection-meta__label">Kids / New Season</p>
+                    <p class="collection-meta__count" data-collection-count="kids"></p>
+                </div>
+
+                <!-- Product cards rendered by JavaScript (js/script.js) -->
+                <div class="product-grid" id="kids-product-grid">
+                    <!-- Rendered dynamically by renderCollection("kids", ...) -->
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ==================================================
+             9. PRODUCT DETAIL (dynamic single-page view)
+        ================================================== -->
+        <section id="product-detail" class="product-detail" aria-labelledby="detail-name" hidden>
+            <div class="container">
+
+                <!-- Breadcrumb: HOME / CATEGORY / PRODUCT -->
+                <nav class="detail-breadcrumb" aria-label="Breadcrumb">
+                    <ol class="detail-breadcrumb__list">
+                        <li class="detail-breadcrumb__item">
+                            <a class="detail-breadcrumb__link" href="#home">Home</a>
+                        </li>
+                        <li class="detail-breadcrumb__item" id="detail-breadcrumb-category"></li>
+                        <li class="detail-breadcrumb__item" id="detail-breadcrumb-product" aria-current="page"></li>
+                    </ol>
+                </nav>
+
+                <button type="button" id="detail-back" class="detail-back">&larr; Back to Shop</button>
+
+                <div class="detail-layout">
+                    <!-- Left: large product image -->
+                    <div class="detail-media">
+                        <img id="detail-image" class="detail-media__image" src="" alt="" />
+                    </div>
+
+                    <!-- Right: product information -->
+                    <div class="detail-info">
+                        <p class="detail-info__brand" id="detail-brand"></p>
+                        <h2 class="detail-info__name" id="detail-name"></h2>
+
+                        <div class="detail-info__rating" id="detail-rating"></div>
+
+                        <div class="detail-info__pricing">
+                            <span class="detail-info__price" id="detail-price"></span>
+                            <span class="detail-info__price-original" id="detail-price-original" hidden></span>
+                            <span class="detail-info__discount" id="detail-discount" hidden></span>
+                        </div>
+
+                        <p class="detail-info__description" id="detail-description"></p>
+
+                        <!-- Color selector -->
+                        <div class="detail-option">
+                            <p class="detail-option__label">Color: <span class="detail-option__value" id="detail-color-value"></span></p>
+                            <div class="detail-option__choices" id="detail-colors" role="group" aria-label="Select a color"></div>
+                        </div>
+
+                        <!-- Size selector -->
+                        <div class="detail-option">
+                            <div class="detail-option__head">
+                                <p class="detail-option__label" id="detail-size-label">
+                                    Size: <span class="detail-option__value" id="detail-size-value"></span>
+                                </p>
+                                <button type="button" id="detail-size-guide" class="detail-option__guide">Size Guide</button>
+                            </div>
+                            <div class="detail-option__choices" id="detail-sizes" role="group" aria-labelledby="detail-size-label"></div>
+                            <p class="detail-option__error" id="detail-size-error" hidden>Please select a size before adding to bag.</p>
+                        </div>
+
+                        <!-- Quantity + actions -->
+                        <div class="detail-actions">
+                            <div class="detail-quantity">
+                                <button type="button" class="detail-quantity__btn" id="detail-qty-minus" aria-label="Decrease quantity">&minus;</button>
+                                <span class="detail-quantity__value" id="detail-qty-value" aria-live="polite">1</span>
+                                <button type="button" class="detail-quantity__btn" id="detail-qty-plus" aria-label="Increase quantity">+</button>
+                            </div>
+                            <button type="button" id="detail-add" class="btn btn--accent detail-actions__add">Add to Bag</button>
+                            <button type="button" id="detail-wishlist" class="detail-actions__wishlist" aria-pressed="false"></button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Related products -->
+                <div class="detail-related">
+                    <header class="featured__header">
+                        <p class="featured__eyebrow">You May Also Like</p>
+                        <h3 class="featured__title">Complete Your Look</h3>
+                    </header>
+                    <div class="product-grid" id="related-product-grid">
+                        <!-- Rendered dynamically by renderRelatedProducts() -->
+                    </div>
+                </div>
+
+                <!-- Size guide modal -->
+                <div class="size-guide" id="size-guide" hidden>
+                    <div class="size-guide__backdrop" data-size-guide-close></div>
+                    <div class="size-guide__dialog" role="dialog" aria-modal="true" aria-labelledby="size-guide-title">
+                        <div class="size-guide__head">
+                            <h4 id="size-guide-title" class="size-guide__title">Size Guide</h4>
+                            <button type="button" class="size-guide__close" id="size-guide-close" aria-label="Close size guide">&times;</button>
+                        </div>
+                        <table class="size-guide__table">
+                            <caption class="visually-hidden">Approximate body measurements in centimetres</caption>
+                            <thead>
+                                <tr>
+                                    <th scope="col">Size</th>
+                                    <th scope="col">Bust / Chest</th>
+                                    <th scope="col">Waist</th>
+                                    <th scope="col">Hip</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><th scope="row">S</th><td>84&ndash;88</td><td>66&ndash;70</td><td>90&ndash;94</td></tr>
+                                <tr><th scope="row">M</th><td>88&ndash;92</td><td>70&ndash;74</td><td>94&ndash;98</td></tr>
+                                <tr><th scope="row">L</th><td>92&ndash;97</td><td>74&ndash;79</td><td>98&ndash;103</td></tr>
+                                <tr><th scope="row">XL</th><td>97&ndash;102</td><td>79&ndash;84</td><td>103&ndash;108</td></tr>
+                            </tbody>
+                        </table>
+                        <p class="size-guide__note">Measurements are approximate body measurements in centimetres. Numeric sizes (30&ndash;36) correspond to waist sizes in inches.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================================================
+             10. SHOPPING CART
+        ================================================== -->
+        <section id="cart" class="cart-page" aria-labelledby="cart-heading" hidden>
+            <div class="container">
+
+                <header class="featured__header cart__header">
+                    <p class="featured__eyebrow">Your Selection</p>
+                    <h2 id="cart-heading" class="featured__title">Shopping Bag</h2>
+                </header>
+
+                <!-- Empty state -->
+                <div class="cart-empty" id="cart-empty" hidden>
+                    <p class="cart-empty__title">Your Bag Is Empty</p>
+                    <p class="cart-empty__text">Discover the latest pieces and add them to your bag.</p>
+                    <a class="btn btn--accent" href="#shop">Explore Collections</a>
+                </div>
+
+                <!-- Cart content (rendered by JavaScript) -->
+                <div class="cart-layout" id="cart-layout" hidden>
+                    <div class="cart-items" id="cart-items">
+                        <!-- Item rows rendered by renderCart() -->
+                    </div>
+
+                    <aside class="cart-summary" aria-label="Order summary">
+                        <h3 class="cart-summary__title">Order Summary</h3>
+
+                        <div class="cart-coupon">
+                            <label class="shop-filter__label" for="cart-coupon-input">Coupon code</label>
+                            <div class="cart-coupon__row">
+                                <input type="text" id="cart-coupon-input" class="cart-coupon__input"
+                                       placeholder="e.g. STYLE10" autocomplete="off" />
+                                <button type="button" id="cart-coupon-apply" class="cart-coupon__apply">Apply</button>
+                            </div>
+                            <p class="cart-coupon__message" id="cart-coupon-message" role="status"></p>
+                        </div>
+
+                        <dl class="cart-totals">
+                            <div class="cart-totals__row">
+                                <dt>Subtotal</dt>
+                                <dd id="cart-subtotal"></dd>
+                            </div>
+                            <div class="cart-totals__row">
+                                <dt>Shipping</dt>
+                                <dd id="cart-shipping"></dd>
+                            </div>
+                            <div class="cart-totals__row" id="cart-discount-row" hidden>
+                                <dt>Discount (<span id="cart-discount-code"></span>)</dt>
+                                <dd id="cart-discount"></dd>
+                            </div>
+                            <div class="cart-totals__row cart-totals__row--total">
+                                <dt>Total</dt>
+                                <dd id="cart-total"></dd>
+                            </div>
+                        </dl>
+
+                        <a class="btn btn--accent cart-summary__checkout" id="cart-checkout" href="#checkout">Proceed to Checkout</a>
+                        <a class="cart-summary__continue" href="#shop">Continue Shopping</a>
+                    </aside>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ==================================================
+             11. CHECKOUT
+        ================================================== -->
+        <section id="checkout" class="checkout-page" aria-labelledby="checkout-heading" hidden>
+            <div class="container">
+
+                <header class="featured__header checkout__header">
+                    <p class="featured__eyebrow">Checkout</p>
+                    <h2 id="checkout-heading" class="featured__title">Complete Your Order</h2>
+                </header>
+
+                <!-- Empty bag guard -->
+                <div class="cart-empty" id="checkout-empty" hidden>
+                    <p class="cart-empty__title">Your Bag Is Empty</p>
+                    <p class="cart-empty__text">Add a few pieces to your bag before checking out.</p>
+                    <a class="btn btn--accent" href="#shop">Explore Collections</a>
+                </div>
+
+                <!-- Form + order summary -->
+                <div class="checkout-layout" id="checkout-form-view" hidden>
+                    <form class="checkout-form" id="checkout-form" novalidate>
+                        <h3 class="checkout-form__title">Shipping Address</h3>
+
+                        <div class="checkout-field">
+                            <label class="shop-filter__label" for="checkout-name">Full Name</label>
+                            <input type="text" id="checkout-name" class="checkout-field__input" autocomplete="name" />
+                            <p class="checkout-field__error" id="checkout-name-error" hidden>Please enter your full name.</p>
+                        </div>
+
+                        <div class="checkout-field">
+                            <label class="shop-filter__label" for="checkout-email">Email</label>
+                            <input type="email" id="checkout-email" class="checkout-field__input" autocomplete="email" />
+                            <p class="checkout-field__error" id="checkout-email-error" hidden>Please enter a valid email address.</p>
+                        </div>
+
+                        <div class="checkout-field">
+                            <label class="shop-filter__label" for="checkout-phone">Phone</label>
+                            <input type="tel" id="checkout-phone" class="checkout-field__input" autocomplete="tel" inputmode="numeric" />
+                            <p class="checkout-field__error" id="checkout-phone-error" hidden>Please enter a 10-digit phone number.</p>
+                        </div>
+
+                        <div class="checkout-field">
+                            <label class="shop-filter__label" for="checkout-address">Address</label>
+                            <input type="text" id="checkout-address" class="checkout-field__input" autocomplete="street-address" />
+                            <p class="checkout-field__error" id="checkout-address-error" hidden>Please enter your address.</p>
+                        </div>
+
+                        <div class="checkout-field-row">
+                            <div class="checkout-field">
+                                <label class="shop-filter__label" for="checkout-city">City</label>
+                                <input type="text" id="checkout-city" class="checkout-field__input" autocomplete="address-level2" />
+                                <p class="checkout-field__error" id="checkout-city-error" hidden>Please enter your city.</p>
+                            </div>
+                            <div class="checkout-field">
+                                <label class="shop-filter__label" for="checkout-state">State</label>
+                                <input type="text" id="checkout-state" class="checkout-field__input" autocomplete="address-level1" />
+                                <p class="checkout-field__error" id="checkout-state-error" hidden>Please enter your state.</p>
+                            </div>
+                        </div>
+
+                        <div class="checkout-field">
+                            <label class="shop-filter__label" for="checkout-pin">PIN Code</label>
+                            <input type="text" id="checkout-pin" class="checkout-field__input" inputmode="numeric" autocomplete="postal-code" />
+                            <p class="checkout-field__error" id="checkout-pin-error" hidden>Please enter a valid 6-digit PIN code.</p>
+                        </div>
+
+                        <fieldset class="checkout-payment">
+                            <legend class="checkout-form__title checkout-payment__legend">Payment Method</legend>
+
+                            <label class="checkout-payment__option">
+                                <input type="radio" name="payment" value="UPI" />
+                                <span class="checkout-payment__details">
+                                    <span class="checkout-payment__name">UPI</span>
+                                    <span class="checkout-payment__hint">Pay via any UPI app</span>
+                                </span>
+                            </label>
+
+                            <label class="checkout-payment__option">
+                                <input type="radio" name="payment" value="card" />
+                                <span class="checkout-payment__details">
+                                    <span class="checkout-payment__name">Credit / Debit Card</span>
+                                    <span class="checkout-payment__hint">Visa, Mastercard, RuPay</span>
+                                </span>
+                            </label>
+
+                            <label class="checkout-payment__option">
+                                <input type="radio" name="payment" value="cod" />
+                                <span class="checkout-payment__details">
+                                    <span class="checkout-payment__name">Cash on Delivery</span>
+                                    <span class="checkout-payment__hint">Pay when your order arrives</span>
+                                </span>
+                            </label>
+                        </fieldset>
+                        <p class="checkout-field__error" id="checkout-payment-error" hidden>Please select a payment method.</p>
+                    </form>
+
+                    <aside class="cart-summary checkout-summary" aria-label="Order summary">
+                        <h3 class="cart-summary__title">Order Summary</h3>
+                        <div class="checkout-summary__items" id="checkout-summary-items">
+                            <!-- Rendered by JavaScript -->
+                        </div>
+
+                        <dl class="cart-totals">
+                            <div class="cart-totals__row">
+                                <dt>Subtotal</dt>
+                                <dd id="checkout-subtotal"></dd>
+                            </div>
+                            <div class="cart-totals__row">
+                                <dt>Shipping</dt>
+                                <dd id="checkout-shipping"></dd>
+                            </div>
+                            <div class="cart-totals__row" id="checkout-discount-row" hidden>
+                                <dt>Discount (<span id="checkout-discount-code"></span>)</dt>
+                                <dd id="checkout-discount"></dd>
+                            </div>
+                            <div class="cart-totals__row cart-totals__row--total">
+                                <dt>Total</dt>
+                                <dd id="checkout-total"></dd>
+                            </div>
+                        </dl>
+
+                        <button type="button" id="checkout-place-order" class="btn btn--accent checkout-place-order">Place Order</button>
+                        <a class="cart-summary__continue" href="#cart">&larr; Back to Bag</a>
+                    </aside>
+                </div>
+
+                <!-- Order confirmation -->
+                <div class="checkout-confirmation" id="checkout-confirmation" hidden>
+                    <svg class="checkout-confirmation__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                        <polyline points="22 4 12 14.01 9 11.01" />
+                    </svg>
+                    <h3 class="checkout-confirmation__title">Order Confirmed</h3>
+                    <p class="checkout-confirmation__text">Thank you for shopping with StyleHub.</p>
+                    <p class="checkout-confirmation__meta">Order ID: <strong id="checkout-order-id"></strong></p>
+                    <p class="checkout-confirmation__meta">Total: <strong id="checkout-order-total"></strong></p>
+                    <a class="btn btn--accent" href="#shop">Continue Shopping</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================================================
+             12. ACCOUNT — LOGIN / REGISTER (simulated)
+        ================================================== -->
+        <section id="account" class="account-page" aria-labelledby="account-heading" hidden>
+            <div class="container">
+
+                <header class="featured__header account__header">
+                    <p class="featured__eyebrow">Account</p>
+                    <h2 id="account-heading" class="featured__title">Welcome to StyleHub</h2>
+                </header>
+
+                <!-- Logged-out: authentication card -->
+                <div class="account-card" id="account-auth">
+                    <div class="account-tabs" aria-label="Choose login or register">
+                        <button type="button" id="account-tab-login" class="account-tab is-active" aria-pressed="true">Login</button>
+                        <button type="button" id="account-tab-register" class="account-tab" aria-pressed="false">Register</button>
+                    </div>
+
+                    <!-- Login form -->
+                    <form class="account-form" id="account-login-form" novalidate>
+                        <div class="account-field">
+                            <label class="shop-filter__label" for="login-email">Email</label>
+                            <input type="email" id="login-email" class="checkout-field__input" autocomplete="email" />
+                        </div>
+
+                        <div class="account-field">
+                            <label class="shop-filter__label" for="login-password">Password</label>
+                            <div class="account-field__wrap">
+                                <input type="password" id="login-password" class="checkout-field__input" autocomplete="current-password" />
+                                <button type="button" id="login-password-toggle" class="account-password-toggle" aria-label="Show password" aria-pressed="false">
+                                    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z"/><circle cx="12" cy="12" r="3"/></svg>
+                                </button>
+                            </div>
+                        </div>
+
+                        <label class="account-remember">
+                            <input type="checkbox" id="login-remember" />
+                            <span>Remember me</span>
+                        </label>
+
+                        <p class="account-form__message" id="account-login-message" role="alert" hidden></p>
+
+                        <button type="button" id="account-login-submit" class="btn btn--accent account-form__submit">Login</button>
+
+                        <p class="account-form__switch">New to StyleHub?
+                            <a href="#account" id="account-switch-register">Create an account</a>
+                        </p>
+                    </form>
+
+                    <!-- Register form -->
+                    <form class="account-form" id="account-register-form" hidden novalidate>
+                        <div class="account-field">
+                            <label class="shop-filter__label" for="register-name">Full Name</label>
+                            <input type="text" id="register-name" class="checkout-field__input" autocomplete="name" />
+                        </div>
+
+                        <div class="account-field">
+                            <label class="shop-filter__label" for="register-email">Email</label>
+                            <input type="email" id="register-email" class="checkout-field__input" autocomplete="email" />
+                        </div>
+
+                        <div class="account-field">
+                            <label class="shop-filter__label" for="register-phone">Phone</label>
+                            <input type="tel" id="register-phone" class="checkout-field__input" autocomplete="tel" inputmode="numeric" />
+                        </div>
+
+                        <div class="account-field">
+                            <label class="shop-filter__label" for="register-password">Password</label>
+                            <div class="account-field__wrap">
+                                <input type="password" id="register-password" class="checkout-field__input" autocomplete="new-password" />
+                                <button type="button" id="register-password-toggle" class="account-password-toggle" aria-label="Show password" aria-pressed="false">
+                                    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z"/><circle cx="12" cy="12" r="3"/></svg>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="account-field">
+                            <label class="shop-filter__label" for="register-confirm">Confirm Password</label>
+                            <div class="account-field__wrap">
+                                <input type="password" id="register-confirm" class="checkout-field__input" autocomplete="new-password" />
+                                <button type="button" id="register-confirm-toggle" class="account-password-toggle" aria-label="Show password" aria-pressed="false">
+                                    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z"/><circle cx="12" cy="12" r="3"/></svg>
+                                </button>
+                            </div>
+                        </div>
+
+                        <p class="account-form__message" id="account-register-message" role="alert" hidden></p>
+
+                        <button type="button" id="account-register-submit" class="btn btn--accent account-form__submit">Register</button>
+
+                        <p class="account-form__switch">Already have an account?
+                            <a href="#account" id="account-switch-login">Log in instead</a>
+                        </p>
+                    </form>
+
+                    <!-- Logged-in: account dashboard -->
+                    <div class="account-dashboard" id="account-logged-in" hidden>
+                        <div class="account-dashboard__head">
+                            <div>
+                                <p class="featured__eyebrow">My Account</p>
+                                <h3 class="account-logged-in__greeting">Hello, <span id="account-user-name"></span></h3>
+                                <p class="account-logged-in__email" id="account-user-email"></p>
+                            </div>
+                            <button type="button" id="account-logout" class="btn btn--primary account-logout">Logout</button>
+                        </div>
+
+                        <!-- Profile -->
+                        <section class="account-panel" aria-labelledby="account-profile-title">
+                            <h4 class="account-panel__title" id="account-profile-title">Profile</h4>
+                            <dl class="account-profile">
+                                <div class="account-profile__row"><dt>Name</dt><dd id="account-profile-name"></dd></div>
+                                <div class="account-profile__row"><dt>Email</dt><dd id="account-profile-email"></dd></div>
+                                <div class="account-profile__row"><dt>Phone</dt><dd id="account-profile-phone"></dd></div>
+                            </dl>
+                        </section>
+
+                        <!-- Order history -->
+                        <section class="account-panel" aria-labelledby="account-orders-title">
+                            <h4 class="account-panel__title" id="account-orders-title">Order History</h4>
+                            <div id="account-orders">
+                                <!-- Rendered by JavaScript -->
+                            </div>
+                        </section>
+
+                        <!-- Wishlist -->
+                        <section class="account-panel" aria-labelledby="account-wishlist-title">
+                            <h4 class="account-panel__title" id="account-wishlist-title">Wishlist</h4>
+                            <div class="product-grid account-wishlist-grid" id="account-wishlist-grid">
+                                <!-- Rendered by JavaScript -->
+                            </div>
+                            <p class="account-empty-note" id="account-wishlist-empty" hidden>Your wishlist is empty — tap the heart on any product to save it.</p>
+                        </section>
+
+                        <!-- Saved addresses -->
+                        <section class="account-panel" aria-labelledby="account-addresses-title">
+                            <h4 class="account-panel__title" id="account-addresses-title">Saved Addresses</h4>
+                            <div id="account-addresses">
+                                <!-- Rendered by JavaScript -->
+                            </div>
+                            <p class="account-empty-note" id="account-addresses-empty" hidden>No saved addresses yet.</p>
+                            <div class="account-address-add">
+                                <label class="visually-hidden" for="account-address-input">New address</label>
+                                <input type="text" id="account-address-input" class="checkout-field__input" placeholder="Add a new address..." />
+                                <button type="button" id="account-address-add" class="cart-coupon__apply">Add</button>
+                            </div>
+                            <p class="account-form__message" id="account-address-message" role="status" hidden></p>
+                        </section>
+
+                        <!-- Size preferences -->
+                        <section class="account-panel" aria-labelledby="account-sizes-title">
+                            <h4 class="account-panel__title" id="account-sizes-title">Size Preferences</h4>
+                            <p class="account-panel__hint">Tap to save your usual sizes.</p>
+                            <div class="detail-option__choices" id="account-size-preferences">
+                                <!-- Rendered by JavaScript -->
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================================================
+             13. PROMOTIONAL BANNER
+        ================================================== -->
+        <section id="promo-banner" class="promo-banner" aria-labelledby="promo-heading">
+            <div class="container promo-banner__inner">
+                <h2 id="promo-heading">Season Sale — Up to 50% Off</h2>
+                <p>Promotional banner content will be added here.</p>
+                <a href="#featured-products" class="btn btn--light">Shop the Sale</a>
+            </div>
+        </section>
+
+        <!-- ==================================================
+             14. ABOUT US
+        ================================================== -->
+        <section id="about" class="section about" aria-labelledby="about-heading">
+            <div class="container">
+
+                <div class="about-layout">
+                    <!-- Brand image -->
+                    <div class="about-media">
+                        <img class="about-media__image"
+                             src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=900&q=80"
+                             alt="Rail of curated garments inside a StyleHub store"
+                             loading="lazy" decoding="async" />
+                    </div>
+
+                    <!-- Brand story -->
+                    <div class="about-story">
+                        <p class="featured__eyebrow">Our Story</p>
+                        <h2 id="about-heading" class="featured__title">Fashion With Purpose</h2>
+                        <p class="about-story__text">
+                            StyleHub began with a simple belief: great fashion should feel personal,
+                            last beyond seasons and be made responsibly. From our atelier sketches to
+                            your wardrobe, every piece is designed with intention and crafted with care.
+                        </p>
+
+                        <div class="about-values">
+                            <div class="about-value">
+                                <h3 class="about-value__title">Craftsmanship</h3>
+                                <p class="about-value__text">Quality fabrics, precise cuts and finishes built to last.</p>
+                            </div>
+                            <div class="about-value">
+                                <h3 class="about-value__title">Conscious Design</h3>
+                                <p class="about-value__text">Thoughtful choices that respect people and the planet.</p>
+                            </div>
+                            <div class="about-value">
+                                <h3 class="about-value__title">Individual Style</h3>
+                                <p class="about-value__text">Pieces that adapt to you — never the other way around.</p>
+                            </div>
+                        </div>
+
+                        <p class="about-sustainability">
+                            <span class="about-sustainability__label">Our promise:</span>
+                            by 2027, 90% of StyleHub collections will use organic, recycled or
+                            certified low-impact materials.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ==================================================
+             15. CONTACT US
+        ================================================== -->
+        <section id="contact" class="section contact" aria-labelledby="contact-heading">
+            <div class="container">
+
+                <header class="featured__header contact__header">
+                    <p class="featured__eyebrow">Get in Touch</p>
+                    <h2 id="contact-heading" class="featured__title">We'd Love to Hear From You</h2>
+                    <p class="featured__description">Questions, feedback or styling advice — our team is here to help.</p>
+                </header>
+
+                <div class="contact-layout">
+                    <!-- Contact information -->
+                    <div class="contact-info">
+                        <div class="contact-info__item">
+                            <h3 class="contact-info__title">Email</h3>
+                            <p><a class="contact-info__link" href="mailto:hello@stylehub.com">hello@stylehub.com</a></p>
+                        </div>
+
+                        <div class="contact-info__item">
+                            <h3 class="contact-info__title">Phone</h3>
+                            <p><a class="contact-info__link" href="tel:+919876543210">+91 98765 43210</a></p>
+                        </div>
+
+                        <div class="contact-info__item">
+                            <h3 class="contact-info__title">Store Hours</h3>
+                            <p class="contact-info__text">Mon – Sat: 10:00 – 20:00<br />Sunday: 11:00 – 18:00</p>
+                        </div>
+
+                        <!-- Store locator -->
+                        <div class="store-locator">
+                            <h3 class="store-locator__title">Store Locator</h3>
+                            <div class="store-locator__grid">
+                                <article class="store-card">
+                                    <h4 class="store-card__city">Mumbai</h4>
+                                    <p class="store-card__address">12 Linking Road, Bandra West</p>
+                                    <p class="store-card__hours">Mon – Sat: 10:00 – 20:00</p>
+                                </article>
+                                <article class="store-card">
+                                    <h4 class="store-card__city">Delhi</h4>
+                                    <p class="store-card__address">45 Greater Kailash I, South Delhi</p>
+                                    <p class="store-card__hours">Mon – Sat: 10:00 – 20:00</p>
+                                </article>
+                                <article class="store-card">
+                                    <h4 class="store-card__city">Bengaluru</h4>
+                                    <p class="store-card__address">8 Brigade Road, Ashok Nagar</p>
+                                    <p class="store-card__hours">Mon – Sat: 10:00 – 20:30</p>
+                                </article>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Contact form (frontend-only) -->
+                    <form class="contact-form checkout-form" id="contact-form" novalidate>
+                        <h3 class="checkout-form__title">Send Us a Message</h3>
+
+                        <div class="checkout-field">
+                            <label class="shop-filter__label" for="contact-name">Name</label>
+                            <input type="text" id="contact-name" class="checkout-field__input" autocomplete="name" required />
+                            <p class="checkout-field__error" id="contact-name-error" hidden>Please enter your name.</p>
+                        </div>
+
+                        <div class="checkout-field">
+                            <label class="shop-filter__label" for="contact-email">Email</label>
+                            <input type="email" id="contact-email" class="checkout-field__input" autocomplete="email" required />
+                            <p class="checkout-field__error" id="contact-email-error" hidden>Please enter a valid email address.</p>
+                        </div>
+
+                        <div class="checkout-field">
+                            <label class="shop-filter__label" for="contact-message">Message</label>
+                            <textarea id="contact-message" class="checkout-field__input" rows="5" required></textarea>
+                            <p class="checkout-field__error" id="contact-message-error" hidden>Please enter a message.</p>
+                        </div>
+
+                        <button type="submit" class="btn btn--accent contact-form__submit">Send Message</button>
+                        <p class="account-form__message" id="contact-form-message" role="status" hidden></p>
+                    </form>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ==================================================
+             16. NEWSLETTER
+        ================================================== -->
+        <section id="newsletter" class="section newsletter" aria-labelledby="newsletter-heading">
+            <div class="container newsletter__inner">
+                <h2 id="newsletter-heading" class="section-title">Join Our Newsletter</h2>
+                <p class="newsletter__text">Get updates on new arrivals and exclusive offers.</p>
+                <form id="newsletter-form" class="newsletter__form" action="#" method="post" novalidate>
+                    <label for="newsletter-email" class="visually-hidden">Email address</label>
+                    <input type="email" id="newsletter-email" name="email" class="newsletter__input"
+                           placeholder="Enter your email address" autocomplete="email" required />
+                    <button type="submit" class="btn btn--primary">Subscribe</button>
+                </form>
+                <!-- JavaScript will display success / error feedback here -->
+                <p id="newsletter-message" class="newsletter__message" role="status" aria-live="polite"></p>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ==================================================
+         17. FOOTER
+    ================================================== -->
+    <footer id="site-footer" class="site-footer">
+        <div class="container">
+
+            <div class="footer__grid">
+                <!-- Brand -->
+                <div class="footer__brand">
+                    <p class="footer__logo">Style<span>Hub</span></p>
+                    <p class="footer__description">
+                        Curated fashion for men, women and kids — designed with
+                        intention, crafted to last beyond seasons.
+                    </p>
+                    <div class="footer__social">
+                        <a class="footer__social-link" href="#" aria-label="StyleHub on Instagram">
+                            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="2.5" y="2.5" width="19" height="19" rx="5" /><circle cx="12" cy="12" r="4.2" /><line x1="17.3" y1="6.7" x2="17.3" y2="6.7" /></svg>
+                        </a>
+                        <a class="footer__social-link" href="#" aria-label="StyleHub on Facebook">
+                            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" /></svg>
+                        </a>
+                        <a class="footer__social-link" href="#" aria-label="StyleHub on X">
+                            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 4l16 16" /><path d="M20 4L4 20" /></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Shop -->
+                <nav class="footer__column" aria-label="Shop links">
+                    <h3 class="footer__column-title">Shop</h3>
+                    <ul class="footer__links">
+                        <li><a href="#womens-collection">Women</a></li>
+                        <li><a href="#mens-collection">Men</a></li>
+                        <li><a href="#kids-collection">Kids</a></li>
+                        <li><a href="#featured-products">New Arrivals</a></li>
+                        <li><a href="#promo-banner">Sale</a></li>
+                    </ul>
+                </nav>
+
+                <!-- Customer links -->
+                <nav class="footer__column" aria-label="Customer links">
+                    <h3 class="footer__column-title">Customer</h3>
+                    <ul class="footer__links">
+                        <li><a href="#account">Account</a></li>
+                        <li><a href="#account">Wishlist</a></li>
+                        <li><a href="#cart">Cart</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </nav>
+
+                <!-- Customer care -->
+                <nav class="footer__column" aria-label="Customer care links">
+                    <h3 class="footer__column-title">Customer Care</h3>
+                    <ul class="footer__links">
+                        <li><a href="#">Shipping &amp; Returns</a></li>
+                        <li><a href="#">Size Guide</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </nav>
+
+                <!-- Newsletter -->
+                <div class="footer__newsletter">
+                    <h3 class="footer__column-title">Newsletter</h3>
+                    <p class="footer__newsletter-text">
+                        New arrivals, early access and exclusive offers — straight to your inbox.
+                    </p>
+                    <form id="footer-newsletter-form" class="footer__newsletter-form" novalidate>
+                        <label class="visually-hidden" for="footer-newsletter-email">Email address</label>
+                        <input type="email" id="footer-newsletter-email" class="footer__newsletter-input"
+                               placeholder="Email address" autocomplete="email" required />
+                        <button type="submit" class="footer__newsletter-btn">Subscribe</button>
+                        <p class="footer__newsletter-message" id="footer-newsletter-message" role="status" hidden></p>
+                    </form>
+                </div>
+            </div>
+
+            <div class="footer__bottom">
+                <p>&copy; <span id="copyright-year">2026</span> StyleHub. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
