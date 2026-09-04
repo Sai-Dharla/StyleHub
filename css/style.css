@@ -995,7 +995,8 @@ button {
 }
 
 .product-card__wishlist.is-active .product-card__heart {
-    fill: currentColor;
+    fill: var(--color-primary);
+    stroke: var(--color-primary);
 }
 
 /* Product badge (NEW / SALE / BESTSELLER) */
@@ -3010,6 +3011,8 @@ button {
 }
 
 .account-wishlist-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
     margin-bottom: 0.5rem;
 }
 
@@ -3563,7 +3566,23 @@ button {
 }
 
 .wishlist-page .product-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.5rem;
     margin-bottom: 1rem;
+}
+
+@media (max-width: 992px) {
+    .wishlist-page .product-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 1.25rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .wishlist-page .product-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0.9rem;
+    }
 }
 
 .footer__grid--sub {

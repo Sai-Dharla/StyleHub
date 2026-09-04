@@ -215,9 +215,9 @@ function createProductCard(product) {
                 <img class="product-card__image" src="${product.image}" alt="${altText}" loading="lazy" decoding="async" />
             </a>
             ${badgeHTML}
-            <button type="button" class="product-card__wishlist"
-                    data-wishlist-id="${product.id}" aria-pressed="false"
-                    aria-label="Add ${product.name} to wishlist">${HEART_ICON}</button>
+            <button type="button" class="product-card__wishlist${wishlist.includes(product.id) ? " is-active" : ""}"
+                    data-wishlist-id="${product.id}" aria-pressed="${wishlist.includes(product.id)}"
+                    aria-label="${wishlist.includes(product.id) ? "Remove " + product.name + " from wishlist" : "Add " + product.name + " to wishlist"}">${HEART_ICON}</button>
         </div>
         <div class="product-card__body">
             <p class="product-card__brand">${product.brand}</p>
@@ -301,13 +301,18 @@ function toggleWishlist(productId, button) {
     }
 
     const isActive = wishlist.includes(productId);
-    button.classList.toggle("is-active", isActive);
-    button.setAttribute("aria-pressed", String(isActive));
 
-    if (product) {
-        button.setAttribute("aria-label",
-            `${isActive ? "Remove" : "Add"} ${product.name} ${isActive ? "from" : "to"} wishlist`);
-    }
+    // Sync EVERY heart for this product — the same product can appear in
+    // multiple grids on one page (featured, shop, collections, wishlist)
+    document.querySelectorAll(`[data-wishlist-id="${productId}"]`).forEach((heartButton) => {
+        heartButton.classList.toggle("is-active", isActive);
+        heartButton.setAttribute("aria-pressed", String(isActive));
+
+        if (product) {
+            heartButton.setAttribute("aria-label",
+                `${isActive ? "Remove" : "Add"} ${product.name} ${isActive ? "from" : "to"} wishlist`);
+        }
+    });
 
     showToast(isActive ? "Added to your wishlist" : "Removed from your wishlist");
 
@@ -440,11 +445,15 @@ function filterProducts() {
     const searchTerm = shopState.search.trim().toLowerCase();
 
     const filtered = products.filter((product) => {
-        // Search matches name, brand or category (case-insensitive)
+        // Search matches name, brand, category, description, colors and
+        // available sizes (all case-insensitive)
         const matchesSearch = !searchTerm
             || product.name.toLowerCase().includes(searchTerm)
             || product.brand.toLowerCase().includes(searchTerm)
-            || product.category.toLowerCase().includes(searchTerm);
+            || product.category.toLowerCase().includes(searchTerm)
+            || (product.description || "").toLowerCase().includes(searchTerm)
+            || (Array.isArray(product.colors) && product.colors.some((color) => color.toLowerCase().includes(searchTerm)))
+            || (Array.isArray(product.sizes) && product.sizes.some((size) => size.toLowerCase() === searchTerm));
 
         const matchesCategory = shopState.category === "all"
             || product.category === shopState.category;
@@ -2086,6 +2095,11 @@ document.addEventListener("DOMContentLoaded", () => {
             shopState.search = event.target.value;
             renderShop();
         });
+
+        // On the dedicated search page the field is immediately usable
+        if (document.body.dataset.page === "search") {
+            document.getElementById("shop-search-input").focus();
+        }
 
         // Category / size / color / brand selects
         [["shop-filter-category", "category"],
