@@ -83,3 +83,10 @@ All application state is persisted client-side in the browser's `localStorage` u
 - Managing application state (cart, wishlist, auth, filters) and persisting it safely with `localStorage`
 - Practicing accessible, semantic HTML and responsive, token-driven CSS at a production standard
 
+## Internship Task
+
+Task ID: WD-EC-002 — StyleHub - Fashion & Apparel
+
+Task Link: https://www.freeinternships.in/web-development-internship/free-online-web-development-internship-fashion-apparel-wd-ec-002.php
+
+Submission Portal: https://www.freeinternships.in/blog/
