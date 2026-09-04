@@ -64,35 +64,35 @@
 
             <!-- Action icons: search / wishlist / shopping bag / account -->
             <div class="header-actions">
-                <button type="button" class="header-action" aria-label="Search">
+                <a class="header-action" href="search.html" aria-label="Search">
                     <svg class="header-action__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
                         <circle cx="11" cy="11" r="7" />
                         <line x1="21" y1="21" x2="16.3" y2="16.3" />
                     </svg>
-                </button>
+                </a>
 
-                <button type="button" class="header-action" aria-label="Wishlist">
+                <a class="header-action" href="wishlist.html" aria-label="Wishlist">
                     <svg class="header-action__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
                         <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
                     </svg>
-                </button>
+                </a>
 
-                <!-- Shopping bag with cart count badge (updated by JavaScript later) -->
-                <button type="button" id="cart-btn" class="header-action" aria-label="Shopping bag">
+                <!-- Shopping bag with cart count badge (updated by JavaScript) -->
+                <a class="header-action" href="cart.html" aria-label="Shopping bag">
                     <svg class="header-action__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
                         <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
                         <line x1="3" y1="6" x2="21" y2="6" />
                         <path d="M16 10a4 4 0 0 1-8 0" />
                     </svg>
                     <span id="cart-count" class="cart-count">0</span>
-                </button>
+                </a>
 
-                <button type="button" id="account-btn" class="header-action" aria-label="My account">
+                <a class="header-action" href="account.html" aria-label="My account">
                     <svg class="header-action__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
                         <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
                         <circle cx="12" cy="7" r="4" />
                     </svg>
-                </button>
+                </a>
             </div>
         </div>
     </header>

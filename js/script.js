@@ -316,6 +316,11 @@ function toggleWishlist(productId, button) {
         renderAccountWishlist();
     }
 
+    // Keep the standalone wishlist page in sync
+    if (document.body.dataset.page === "wishlist") {
+        renderWishlistPage();
+    }
+
     saveState();
 }
 
@@ -339,7 +344,7 @@ function addToCart(productId, options = {}) {
 
     updateCartCount();
     saveState();
-    showToast("Added to your bag");
+    showToast("Added to Bag ✓");
 }
 
 /** Keeps the header cart badge (#cart-count) showing the total
@@ -373,6 +378,25 @@ function showToast(message) {
 
     clearTimeout(toastTimer);
     toastTimer = setTimeout(() => toast.classList.remove("is-visible"), 2200);
+}
+
+/** Temporarily switches a button into its "added" state. */
+function flashButtonFeedback(button, message) {
+    if (!button || button.dataset.feedback === "true") {
+        return;
+    }
+
+    const originalText = button.textContent;
+
+    button.dataset.feedback = "true";
+    button.textContent = message;
+    button.classList.add("is-added");
+
+    setTimeout(() => {
+        button.textContent = originalText;
+        button.classList.remove("is-added");
+        delete button.dataset.feedback;
+    }, 1500);
 }
 
 /* =========================================================
@@ -592,6 +616,12 @@ function openProductDetail(productId, options = {}) {
     // Unknown id -> calmly return to the normal shop view
     if (!product) {
         closeProductDetail();
+        return;
+    }
+
+    // Standalone pages (search / wishlist) open the detail on the main site
+    if (!detail) {
+        window.location.href = "index.html#product-" + product.id;
         return;
     }
 
@@ -1804,6 +1834,23 @@ function renderAccountWishlist() {
     renderProducts(savedProducts, grid);
 }
 
+/* 12.11 Standalone wishlist page rendering */
+function renderWishlistPage() {
+    const grid = document.getElementById("wishlist-page-grid");
+    const emptyNote = document.getElementById("wishlist-page-empty");
+
+    if (!grid || !emptyNote) {
+        return;
+    }
+
+    const savedProducts = products.filter((product) => wishlist.includes(product.id));
+
+    emptyNote.hidden = savedProducts.length > 0;
+    grid.hidden = savedProducts.length === 0;
+
+    renderProducts(savedProducts, grid);
+}
+
 function renderAccountAddresses() {
     const wrap = document.getElementById("account-addresses");
     const emptyNote = document.getElementById("account-addresses-empty");
@@ -1897,6 +1944,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Restore persisted state before anything renders
     loadState();
+    updateCartCount();
+
+    // Standalone pages render their own content on load
+    switch (document.body.dataset.page) {
+        case "cart":
+            renderCart();
+            break;
+        case "wishlist":
+            renderWishlistPage();
+            break;
+        case "account":
+            updateAccountUI();
+            break;
+    }
 
     /* =========================================================
        1. MOBILE NAVIGATION (hamburger menu)
@@ -1996,6 +2057,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             if (addButton) {
                 addToCart(Number(addButton.dataset.addId));
+                flashButtonFeedback(addButton, "✓ Added");
                 return;
             }
 
@@ -2106,6 +2168,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 color: detailSelectedColor,
                 quantity: detailQuantity
             });
+
+            flashButtonFeedback(document.getElementById("detail-add"), "✓ Added");
         });
 
         // Wishlist on the detail page (reuses existing wishlist logic)
@@ -2176,10 +2240,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const cartSection = document.getElementById("cart");
 
     if (cartSection) {
-        // Header bag button opens the cart page
-        const cartButton = document.getElementById("cart-btn");
-        if (cartButton) {
-            cartButton.addEventListener("click", openCartPage);
+        // On the dedicated cart page, render the bag on load
+        if (document.body.dataset.page === "cart") {
+            renderCart();
         }
 
         // Quantity +/- and Remove (delegated; no page reload)
@@ -2244,8 +2307,6 @@ document.addEventListener("DOMContentLoaded", () => {
        12.10 ACCOUNT: wiring
        ========================================================= */
     if (document.getElementById("account")) {
-        document.getElementById("account-btn").addEventListener("click", openAccountPage);
-
         document.getElementById("account-tab-login").addEventListener("click", () => setAccountMode("login"));
         document.getElementById("account-tab-register").addEventListener("click", () => setAccountMode("register"));
 

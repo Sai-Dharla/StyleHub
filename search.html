@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Search and filter the full StyleHub catalogue — fashion for men, women and kids." />
+    <title>Search | StyleHub</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/script.js" defer></script>
+</head>
+
+<body data-page="search">
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <div class="announcement-bar" role="region" aria-label="Store announcement">
+        <p class="announcement-bar__text">
+            Free shipping on orders over <span class="announcement-bar__highlight">₹999</span>
+        </p>
+    </div>
+
+    <header id="site-header" class="site-header">
+        <div class="header__inner container">
+            <button id="nav-toggle" class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="primary-navigation">
+                <span class="nav-toggle__bar"></span>
+                <span class="nav-toggle__bar"></span>
+                <span class="nav-toggle__bar"></span>
+            </button>
+
+            <a href="index.html" class="logo" aria-label="StyleHub - go to homepage">Style<span class="logo__accent">Hub</span></a>
+
+            <nav id="primary-navigation" class="main-nav" aria-label="Primary navigation">
+                <ul class="main-nav__list">
+                    <li><a class="main-nav__link" href="index.html">Home</a></li>
+                    <li><a class="main-nav__link" href="index.html#categories">Categories</a></li>
+                    <li><a class="main-nav__link" href="index.html#shop">Shop</a></li>
+                    <li><a class="main-nav__link" href="index.html#mens-collection">Men</a></li>
+                    <li><a class="main-nav__link" href="index.html#womens-collection">Women</a></li>
+                    <li><a class="main-nav__link" href="index.html#kids-collection">Kids</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-actions">
+                <a class="header-action" href="search.html" aria-label="Search"><svg class="header-action__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="7" /><line x1="21" y1="21" x2="16.3" y2="16.3" /></svg></a>
+                <a class="header-action" href="wishlist.html" aria-label="Wishlist"><svg class="header-action__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" /></svg></a>
+                <a class="header-action" href="cart.html" aria-label="Shopping bag"><svg class="header-action__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" /><line x1="3" y1="6" x2="21" y2="6" /><path d="M16 10a4 4 0 0 1-8 0" /></svg><span id="cart-count" class="cart-count">0</span></a>
+                <a class="header-action" href="account.html" aria-label="My account"><svg class="header-action__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" /><circle cx="12" cy="7" r="4" /></svg></a>
+            </div>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <section id="shop" class="section shop" aria-labelledby="shop-heading">
+            <div class="container">
+
+                <a class="page-back" href="index.html">&larr; Back to StyleHub</a>
+
+                <header class="featured__header shop__header">
+                    <p class="featured__eyebrow">The StyleHub Edit</p>
+                    <h2 id="shop-heading" class="featured__title">Shop All Styles</h2>
+                    <p class="featured__description">Find your next favorite piece with our curated selection of fashion for every generation.</p>
+                </header>
+
+                <!-- Search -->
+                <div class="shop-search">
+                    <label class="visually-hidden" for="shop-search-input">Search products, brands or styles</label>
+                    <svg class="shop-search__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+                        <circle cx="11" cy="11" r="7" />
+                        <line x1="21" y1="21" x2="16.3" y2="16.3" />
+                    </svg>
+                    <input type="search" id="shop-search-input" class="shop-search__input"
+                           placeholder="Search products, brands or styles..." autocomplete="off" />
+                </div>
+
+                <!-- Filter toolbar -->
+                <div class="shop-toolbar" role="group" aria-label="Filter and sort products">
+                    <div class="shop-filter">
+                        <label class="shop-filter__label" for="shop-filter-category">Category</label>
+                        <select id="shop-filter-category" class="shop-filter__select">
+                            <option value="all">All</option>
+                            <option value="women">Women</option>
+                            <option value="men">Men</option>
+                            <option value="kids">Kids</option>
+                        </select>
+                    </div>
+
+                    <div class="shop-filter">
+                        <label class="shop-filter__label" for="shop-filter-size">Size</label>
+                        <select id="shop-filter-size" class="shop-filter__select">
+                            <option value="all">All</option>
+                            <!-- Size options generated by JavaScript -->
+                        </select>
+                    </div>
+
+                    <div class="shop-filter">
+                        <label class="shop-filter__label" for="shop-filter-color">Color</label>
+                        <select id="shop-filter-color" class="shop-filter__select">
+                            <option value="all">All</option>
+                            <!-- Color options generated by JavaScript -->
+                        </select>
+                    </div>
+
+                    <div class="shop-filter">
+                        <label class="shop-filter__label" for="shop-filter-brand">Brand</label>
+                        <select id="shop-filter-brand" class="shop-filter__select">
+                            <option value="all">All</option>
+                            <!-- Brand options generated by JavaScript -->
+                        </select>
+                    </div>
+
+                    <div class="shop-filter shop-filter--price">
+                        <label class="shop-filter__label" for="shop-filter-price">
+                            Price: up to <span class="shop-filter__price-value" id="shop-price-value"></span>
+                        </label>
+                        <input type="range" id="shop-filter-price" class="shop-filter__range" min="0" step="100" />
+                    </div>
+
+                    <div class="shop-filter shop-filter--sort">
+                        <label class="shop-filter__label" for="shop-sort">Sort by</label>
+                        <select id="shop-sort" class="shop-filter__select">
+                            <option value="featured">Featured</option>
+                            <option value="price-asc">Price: Low to High</option>
+                            <option value="price-desc">Price: High to Low</option>
+                            <option value="rating">Rating</option>
+                            <option value="name">Name: A–Z</option>
+                        </select>
+                    </div>
+
+                    <button type="button" id="shop-clear" class="shop-clear">Clear All</button>
+                </div>
+
+                <!-- Results meta: label + dynamic result count -->
+                <div class="collection-meta shop-meta">
+                    <p class="collection-meta__label">Shop / All Styles</p>
+                    <p class="collection-meta__count" id="shop-result-count"></p>
+                </div>
+
+                <!-- Matching products rendered by JavaScript -->
+                <div class="product-grid" id="shop-product-grid"></div>
+
+                <!-- Empty state (shown by JavaScript when nothing matches) -->
+                <div class="shop-empty" id="shop-empty" hidden>
+                    <p class="shop-empty__title">No Styles Found</p>
+                    <p class="shop-empty__text">Try adjusting your filters or search for another style.</p>
+                    <button type="button" id="shop-reset" class="btn btn--outline">Reset Filters</button>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <footer id="site-footer" class="site-footer">
+        <div class="container">
+            <div class="footer__grid footer__grid--sub">
+                <div class="footer__brand">
+                    <p class="footer__logo">Style<span>Hub</span></p>
+                    <p class="footer__description">Curated fashion for men, women and kids — designed with intention, crafted to last.</p>
+                </div>
+                <nav class="footer__column" aria-label="Shop links">
+                    <h3 class="footer__column-title">Shop</h3>
+                    <ul class="footer__links">
+                        <li><a href="index.html#shop">Shop All</a></li>
+                        <li><a href="index.html#mens-collection">Men</a></li>
+                        <li><a href="index.html#womens-collection">Women</a></li>
+                        <li><a href="index.html#kids-collection">Kids</a></li>
+                    </ul>
+                </nav>
+                <nav class="footer__column" aria-label="Customer links">
+                    <h3 class="footer__column-title">Customer</h3>
+                    <ul class="footer__links">
+                        <li><a href="account.html">Account</a></li>
+                        <li><a href="wishlist.html">Wishlist</a></li>
+                        <li><a href="cart.html">Cart</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="footer__bottom">
+                <p>&copy; <span id="copyright-year">2026</span> StyleHub. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

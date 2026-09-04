@@ -3557,3 +3557,58 @@ button {
     }
 }
 
+/* ---------- 20. Standalone pages (search / wishlist / cart / account) ---------- */
+.wishlist-page {
+    padding-block: 3rem 5rem;
+}
+
+.wishlist-page .product-grid {
+    margin-bottom: 1rem;
+}
+
+.footer__grid--sub {
+    grid-template-columns: 2fr 1fr 1fr;
+}
+
+.page-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    margin-bottom: 2rem;
+    padding: 0;
+    border: none;
+    background: none;
+    font-family: inherit;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--color-dark);
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.page-back:hover {
+    color: var(--color-primary);
+}
+
+.page-back:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 4px;
+}
+
+@media (max-width: 600px) {
+    .wishlist-page,
+    .cart-page,
+    .account-page,
+    .shop {
+        padding-block: 2.5rem 3.5rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .page-back {
+        transition: none;
+    }
+}
+
